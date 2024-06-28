@@ -7,12 +7,18 @@ const user = {
 const emailInput = document.querySelector("#userEmail");
 const pwInput = document.querySelector("#userPassword");
 
+//~ let emailCheckPass = false;
+//~ let pwCheckPass = false;
+
 emailInput.addEventListener("input", (e) => {
   // 메일 입력하면서 검증
   if (emailReg(e.target.value)) {
+    // e.target.value = this.value 여기서 this는 emailInput
     emailInput.classList.remove("is--invalid"); //검증완료
+    //~ emailCheckPass = true
   } else {
     emailInput.classList.add("is--invalid");
+    //~ emailCheckPass = false;
   }
 });
 
@@ -21,8 +27,10 @@ pwInput.addEventListener("input", (e) => {
   // Pw 입력하면서 검증
   if (pwReg(e.target.value)) {
     pwInput.classList.remove("is--invalid"); //검증완료
+    //~ pwCheckPass = true;
   } else {
     pwInput.classList.add("is--invalid");
+    //~ pwCheckPass = false;
   }
 });
 
@@ -30,15 +38,16 @@ pwInput.addEventListener("input", (e) => {
 
 //* 로그인 버튼 클릭시 조건 처리
 const loginBtn = document.querySelector(".btn-login");
-loginBtn.addEventListener("click", loginSubmit);
+loginBtn.addEventListener("click", handleLogin); //todo handlelogin 으로 바꾸기!
 
-function loginSubmit(e) {
-  e.preventDefault();
+function handleLogin(e) {
+  e.preventDefault(); //* 이거 떄문에 required 무시됨! 
+  //~ > if(emailCheckPass && pwCheckPass) try{const id = emailInput.value; const pw = pwInput.value; const getUserId = user.id; const getUserPw = user.pw; if(id===getUserId && pw===getUserPw){location.href='welcome.html;}catch{}}
   if (
     !emailInput.classList.contains("is--inavalid") &&
     !pwInput.classList.contains("is--invalid")
   ) {
-    userCheck();
+    userCheck(); //정보 맞는지 확인하는 거. 
   } else {
     alert("아이디, 비밀번호를 확인해주세요");
   }
@@ -66,3 +75,6 @@ function userCheck() {
     alert("아이디 혹은 비밀번호가 맞지 않습니다.");
   }
 }
+
+//~ 1. 함수 뜯기
+//~ 2. handle 함수 내에서 this 하면 함수 호출한 노드가 나온다 ex)emailInput
