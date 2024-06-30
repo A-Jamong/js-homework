@@ -1,0 +1,14 @@
+{
+  "name": "js-homework",
+  "version": "1.0.0",
+  "description": "js 고수가 될 거야",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server --host=localhost --port=5500 --no-browser "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
