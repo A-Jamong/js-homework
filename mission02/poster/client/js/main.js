@@ -37,5 +37,11 @@ function handleclick(e) {
 
   //이미지 바뀌게 하기
   nowImage.src = `./assets/${data[targetIndex].name.toLowerCase()}.jpeg`
+  nowImage.alt = `${data[targetIndex].alt}`
+  //이름 바꾸기
+
+  const nameText = document.querySelector('.nickName');
+  console.log(nameText);
+  nameText.textContent = `${data[targetIndex].name}`
 }
 ulNavi.addEventListener("click", handleclick);
