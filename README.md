@@ -2,7 +2,7 @@
 
 ## MISSION 02   
 
-[🦦 mission01 : 로그인 구현하기](https://github.com/A-Jamong/js-homework/blob/poster/mission02/poster/client/js/main.js)  
+[🦦 mission02 : 포스터 슬라이드 만들기](https://github.com/A-Jamong/js-homework/blob/poster/mission02/poster/client/js/main.js)  
 
 - [X] 클릭 이벤트 활성화
 - [X] nav 클릭시 배경 색상 변경
