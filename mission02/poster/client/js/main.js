@@ -12,8 +12,19 @@
 const ulNavi = document.querySelector("ul");
 const nowImage = document.querySelector(".visual img");
 
-function setBgColor(node, color) {
-  node = document.querySelector(node);
+function setBgColor(nodeSelec, color) {
+  const node = document.querySelector(nodeSelec);
+  node.style.background = color;
+}
+
+function setImage(nodeSelec, adress, alt) {
+  nodeSelec.src = adress;
+  nodeSelec.alt = alt;
+}
+
+function setNameText(nodeSelec, text){
+  const node = document.querySelector(nodeSelec);
+  node.textContent =text;
 }
 
 function handleclick(e) {
@@ -21,10 +32,8 @@ function handleclick(e) {
   if (!target) return;
 
   //인덱스, 컬러값 가져오기
-  const targetIndex = target.dataset.index-1;
-  const targetColor = `linear-gradient(to bottom, ${
-    data[targetIndex].color[0]
-  }, ${data[targetIndex].color[1]})`;
+  const targetIndex = target.dataset.index - 1;
+  const targetColor = `linear-gradient(to bottom, ${data[targetIndex].color[0]}, ${data[targetIndex].color[1]})`;
 
   //누른 것만 활성 클래스 넣기
   // const liItem = navi.querySelectorAll("li");
@@ -32,16 +41,13 @@ function handleclick(e) {
   liItem.forEach((item) => item.classList.remove("is-active"));
   target.classList.add("is-active");
 
-  //배경색 바뀌게 하기
-  document.body.style.background = targetColor;
+  //* 배경색 바뀌게 하기
+  setBgColor("body", targetColor);
 
-  //이미지 바뀌게 하기
-  nowImage.src = `./assets/${data[targetIndex].name.toLowerCase()}.jpeg`
-  nowImage.alt = `${data[targetIndex].alt}`
-  //이름 바꾸기
-
-  const nameText = document.querySelector('.nickName');
-  console.log(nameText);
-  nameText.textContent = `${data[targetIndex].name}`
+  //* 이미지 바뀌게 하기
+  setImage(nowImage, `./assets/${data[targetIndex].name.toLowerCase()}.jpeg`, `${data[targetIndex].alt}`)
+  
+  //*이름 바꾸기
+  setNameText('.nickName', `${data[targetIndex].name}`);
 }
 ulNavi.addEventListener("click", handleclick);
