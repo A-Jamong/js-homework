@@ -1,4 +1,19 @@
 # Javascript Homework 📓
+
+## MISSION 02
+
+[🦦 mission01 : 로그인 구현하기](https://github.com/A-Jamong/js-homework/blob/poster/mission02/poster/client/js/main.js)  
+
+- [X] 클릭 이벤트 활성화
+- [X] nav 클릭시 배경 색상 변경
+- [X] 이미지 변경
+- [X] 텍스트 변경
+- [X] 함수 분리
+
+- [] 함수를 더 쓰기 편하게 바꾸려면 어떻게 해야하는지 연구해야할 것 같다. 
+
+
+
 ## MISSION 01
 
 [🐨 mission01 : 로그인 구현하기](https://github.com/A-Jamong/js-homework/blob/main/mission01/naver_login/js/main.js)   
